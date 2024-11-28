@@ -1,0 +1,8 @@
+{
+  "name": "server",
+  "packageManager": "yarn@4.5.1",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}

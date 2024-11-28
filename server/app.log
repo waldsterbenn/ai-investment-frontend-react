@@ -1,0 +1,89 @@
+15-11-2024 17:24:13 - sampleLogger - ERROR - single_advice_technical.py - [Errno 2] No such file or directory: './config/api_keys.json'
+15-11-2024 17:24:13 - sampleLogger - ERROR - single_advice_technical.py - [Errno 2] No such file or directory: './config/app_config.json'
+15-11-2024 17:30:21 - sampleLogger - ERROR - single_advice_technical.py - [Errno 2] No such file or directory: './config/api_keys.json'
+15-11-2024 17:30:21 - sampleLogger - ERROR - single_advice_technical.py - [Errno 2] No such file or directory: './config/app_config.json'
+15-11-2024 17:32:20 - sampleLogger - INFO - stock_information_processor.py - Running analysis on John Deere (DE)
+15-11-2024 17:32:21 - sampleLogger - INFO - techical_analyst.py - Techical analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 17:32:21 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8934 chars.
+15-11-2024 17:34:49 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 17:34:49 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2521 chars.
+15-11-2024 17:47:49 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Veeco (VECO)
+15-11-2024 17:47:49 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Veeco (VECO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 17:47:49 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8090 chars.
+15-11-2024 17:50:04 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 17:50:04 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 3054 chars.
+15-11-2024 18:41:06 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Veeco (VECO)
+15-11-2024 18:41:07 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Veeco (VECO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 18:41:07 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8090 chars.
+15-11-2024 18:43:14 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 18:43:14 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2950 chars.
+15-11-2024 18:54:16 - sampleLogger - INFO - stock_information_processor.py - Running analysis on John Deere (DE)
+15-11-2024 18:54:17 - sampleLogger - INFO - techical_analyst.py - Techical analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 18:54:17 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8933 chars.
+15-11-2024 18:55:47 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 18:55:47 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2422 chars.
+15-11-2024 18:57:28 - sampleLogger - INFO - stock_information_processor.py - Running analysis on DELL (DELL)
+15-11-2024 18:57:29 - sampleLogger - INFO - techical_analyst.py - Techical analysis of DELL (DELL). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 18:57:29 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8883 chars.
+15-11-2024 18:58:32 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 18:58:32 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2329 chars.
+15-11-2024 19:59:15 - sampleLogger - INFO - stock_information_processor.py - Running analysis on DELL (DELL)
+15-11-2024 19:59:16 - sampleLogger - INFO - techical_analyst.py - Techical analysis of DELL (DELL). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 19:59:16 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8883 chars.
+15-11-2024 20:00:41 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 20:00:41 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2682 chars.
+15-11-2024 21:25:58 - sampleLogger - INFO - stock_information_processor.py - Running analysis on DELL (DELL)
+15-11-2024 21:25:59 - sampleLogger - INFO - techical_analyst.py - Techical analysis of DELL (DELL). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 21:25:59 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8884 chars.
+15-11-2024 21:27:24 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 21:27:24 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2491 chars.
+15-11-2024 22:03:54 - sampleLogger - INFO - stock_information_processor.py - Running analysis on John Deere (DE)
+15-11-2024 22:03:55 - sampleLogger - INFO - techical_analyst.py - Techical analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+15-11-2024 22:03:55 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8934 chars.
+15-11-2024 22:05:14 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+15-11-2024 22:05:14 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2407 chars.
+18-11-2024 13:52:58 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Advanced Micro Devices (AMD)
+18-11-2024 13:53:00 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Advanced Micro Devices (AMD). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 13:53:00 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8848 chars.
+18-11-2024 13:57:52 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Advanced Micro Devices (AMD)
+18-11-2024 13:57:52 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Advanced Micro Devices (AMD). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 13:57:52 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8848 chars.
+18-11-2024 16:05:29 - sampleLogger - INFO - stock_information_processor.py - Running analysis on John Deere (DE)
+18-11-2024 16:05:29 - sampleLogger - INFO - techical_analyst.py - Techical analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 16:05:29 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8933 chars.
+18-11-2024 17:12:34 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Veeco (VECO)
+18-11-2024 17:12:35 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Veeco (VECO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 17:12:35 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8105 chars.
+18-11-2024 17:17:13 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Veeco (VECO)
+18-11-2024 17:17:14 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Veeco (VECO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 17:17:14 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8105 chars.
+18-11-2024 18:06:24 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Veeco (VECO)
+18-11-2024 18:06:25 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Veeco (VECO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 18:06:25 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8107 chars.
+18-11-2024 18:08:53 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Advanced Micro Devices (AMD)
+18-11-2024 18:08:53 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Advanced Micro Devices (AMD). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 18:08:54 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8846 chars.
+18-11-2024 18:10:44 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+18-11-2024 18:10:44 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 2778 chars.
+18-11-2024 20:12:11 - sampleLogger - INFO - stock_information_processor.py - Running analysis on Advanced Micro Devices (AMD)
+18-11-2024 20:12:12 - sampleLogger - INFO - techical_analyst.py - Techical analysis of Advanced Micro Devices (AMD). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+18-11-2024 20:12:12 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 8847 chars.
+18-11-2024 20:15:24 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+18-11-2024 20:15:24 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 3649 chars.
+19-11-2024 14:40:26 - sampleLogger - INFO - stock_information_processor.py - Running financial analysis on Genmab (GMAB.CO)
+19-11-2024 14:40:28 - sampleLogger - INFO - fin_statement_analyst.py - Financial statement analysis of Genmab (GMAB.CO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+19-11-2024 14:40:28 - sampleLogger - INFO - fin_statement_analyst.py - LLM analysing query. Prompt 6107 chars.
+19-11-2024 14:47:03 - sampleLogger - INFO - stock_information_processor.py - Running financial analysis on Genmab (GMAB.CO)
+19-11-2024 14:47:04 - sampleLogger - INFO - fin_statement_analyst.py - Financial statement analysis of Genmab (GMAB.CO). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+19-11-2024 14:47:04 - sampleLogger - INFO - fin_statement_analyst.py - LLM analysing query. Prompt 6204 chars.
+19-11-2024 14:58:09 - sampleLogger - INFO - stock_information_processor.py - Running financial analysis on John Deere (DE)
+19-11-2024 14:58:14 - sampleLogger - INFO - fin_statement_analyst.py - Financial statement analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+19-11-2024 14:58:14 - sampleLogger - INFO - fin_statement_analyst.py - LLM analysing query. Prompt 13497 chars.
+19-11-2024 15:00:28 - sampleLogger - INFO - stock_information_processor.py - Running technical analysis on John Deere (DE)
+19-11-2024 15:00:28 - sampleLogger - INFO - techical_analyst.py - Techical analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+19-11-2024 15:00:28 - sampleLogger - INFO - techical_analyst.py - LLM analysing query. Prompt 9050 chars.
+19-11-2024 15:02:32 - sampleLogger - INFO - stock_advisor.py - Advisor analysis LLM: llama3.2. Context Window: 131072. Temperature: 0.3
+19-11-2024 15:02:32 - sampleLogger - INFO - stock_advisor.py - LLM analysing query. Prompt 3652 chars.
+19-11-2024 15:37:30 - sampleLogger - INFO - stock_information_processor.py - Running financial analysis on John Deere (DE)
+19-11-2024 15:37:32 - sampleLogger - INFO - fin_statement_analyst.py - Financial statement analysis of John Deere (DE). LLM: llama3.2. Context Window: 131072. Temperature: 0.2
+19-11-2024 15:37:32 - sampleLogger - INFO - fin_statement_analyst.py - LLM analysing query. Prompt 13484 chars.

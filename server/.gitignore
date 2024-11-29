@@ -12,3 +12,4 @@
 #!.yarn/cache
 .pnp.*
 data/sec-edgar-filings*
+app.log

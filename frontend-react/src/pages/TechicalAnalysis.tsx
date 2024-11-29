@@ -1,18 +1,20 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
+import StockContext from "../store/StockContext";
 
-export default function TechnicalAnalysis(props: any) {
+export default function TechnicalAnalysis() {
   const [isRunningAnalysis, setIsRunningAnalysis] = useState(false);
   const [report, setReport] = useState<{ __html: string } | null>(null);
+  const stockCtx = useContext(StockContext);
 
   const runTechnicalAnalysis = useCallback(async () => {
-    if (!isRunningAnalysis && props.selectedItem?.stock) {
+    if (!isRunningAnalysis && stockCtx?.currentStock) {
       setIsRunningAnalysis(true);
       setReport(null);
       try {
         const response = await axios.post(
           "http://localhost:3001/api/run-technical-analysis",
-          props.selectedItem.stock,
+          stockCtx.currentStock,
           { headers: { "Content-Type": "application/json" } }
         );
         setReport({ __html: response.data.report });
@@ -23,15 +25,19 @@ export default function TechnicalAnalysis(props: any) {
         setIsRunningAnalysis(false);
       }
     }
-  }, [isRunningAnalysis, props.selectedItem?.stock]);
-
+  }, [isRunningAnalysis, stockCtx]);
+  console.debug(stockCtx?.currentStock);
   return (
     <div className="pre-container">
       <div className="card">
         <div className="card-body">
-          {props.selectedItem?.stock && !report ? (
+          {!stockCtx?.currentStock && (
+            <span>You have to select a stock before we can analyse</span>
+          )}
+
+          {stockCtx?.currentStock && !report ? (
             <span>
-              You can run an analysis on {props.selectedItem.stock.name}, it may
+              You can run an analysis on {stockCtx?.currentStock.name}, it may
               take a while.
             </span>
           ) : (
@@ -59,7 +65,7 @@ export default function TechnicalAnalysis(props: any) {
           ) : (
             <button
               onClick={runTechnicalAnalysis}
-              disabled={!props.selectedItem?.stock}
+              disabled={!stockCtx?.currentStock}
               className="btn btn-primary"
               type="button"
             >

@@ -1,19 +1,31 @@
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
+import StockContext, { Stock } from "../store/StockContext";
 
 export default function SelectStock() {
-  const [items, setItems] =
-    useState<[{ name: string; ticker_symbol: string }]>();
+  const [items, setItems] = useState<Stock[]>([]);
 
-  useCallback(async () => {
+  // Get ref to global app storage. Set selected value on the ctx to send changes to others
+  const stockCtx = useContext(StockContext);
+
+  //Memorize function to avoid recreating on subsequent renders
+  const fetchPortfolio = useCallback(async () => {
     try {
       const response = await axios.get("http://localhost:3001/api/portfolio");
       setItems(response.data.portfolio);
     } catch (error) {
       console.error(error);
-      //setItems([{ id: -1, name: 'Error fetching message' }]);
+      if (error instanceof Error) {
+        //Send error up
+        stockCtx?.error(error.message);
+      }
     }
-  }, []);
+  }, [stockCtx]);
+
+  // Use useEffect to trigger the API call when component mounts
+  useEffect(() => {
+    fetchPortfolio();
+  }, [fetchPortfolio]);
 
   return (
     <div className="container text-start">
@@ -28,27 +40,26 @@ export default function SelectStock() {
               </span>
             </header>
             <div className="card-body">
-              <div v-for="item in items" className="form-check">
-                {items!.map((item) => (
-                  <>
+              <div className="form-check">
+                {items?.map((item, index) => (
+                  <div key={index}>
                     <input
                       type="radio"
                       className="form-check-input"
-                      v-model="selectedItem.stock"
+                      name="stockSelection"
+                      onChange={() => stockCtx?.setCurrentStock(item)}
                     />
                     <label className="form-check-label">
                       {item.name} ({item.ticker_symbol})
                     </label>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
             <footer className="card-footer text-end">
-              {/* <RouterLink to="/"> */}
               <button className="btn btn-primary" type="button">
                 Back
               </button>
-              {/* </RouterLink> */}
             </footer>
           </div>
         </div>

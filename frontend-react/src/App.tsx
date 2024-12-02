@@ -15,19 +15,25 @@ type ComponentMap = {
 };
 
 const backendUrl = "http://localhost:3001/api/";
+function errorCallback(err: string) {
+  alert(err);
+}
 
 function App() {
-  function errorCallback(err: string) {
-    alert(err);
-  }
-  const serviceModel = new ServiceModel({ backendUrl, errorCallback });
+  const serviceModel = useMemo(
+    () => new ServiceModel({ backendUrl, errorCallback }),
+    []
+  );
+
   const [currentComponentName, setCurrentComponentName] =
     useState<string>("Overview");
 
   const componentMap: ComponentMap = {
     Overview,
     SelectStock: (props) => <SelectStock serviceModel={props.serviceModel} />,
-    TechnicalAnalysis,
+    TechnicalAnalysis: (props) => (
+      <TechnicalAnalysis serviceModel={props.serviceModel} />
+    ),
     FundamentalAnalysis,
     About,
   };
@@ -50,13 +56,22 @@ function App() {
         to: "/technicalanalysis",
         text: "Technical Analysis",
         component: "TechnicalAnalysis",
+        props: { serviceModel },
       },
       { to: "/about", text: "About", component: "About" },
     ],
-    []
+    [serviceModel]
   );
 
-  const CurrentComponent = componentMap[currentComponentName];
+  const CurrentComponent = useMemo<React.ReactElement>(() => {
+    const ComponentToRender = componentMap[currentComponentName];
+    const componentProps =
+      links.find((link) => link.component === currentComponentName)?.props ||
+      {};
+
+    return <ComponentToRender {...componentProps} />;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentComponentName]);
 
   const routeLinks = links.map((link) => (
     <li className="nav-item ms-2" key={link.to}>
@@ -152,7 +167,7 @@ function App() {
           </div>
         </header>
         <div className="wrapper container py-4 px-3 mx-auto">
-          <CurrentComponent serviceModel={serviceModel} />
+          {CurrentComponent}
         </div>
       </div>
     </StockContext.Provider>

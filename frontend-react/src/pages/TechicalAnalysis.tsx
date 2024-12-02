@@ -1,8 +1,12 @@
-import axios from "axios";
 import { useCallback, useContext, useState } from "react";
+import { ServiceModel } from "../model/serviceModel";
 import StockContext from "../store/StockContext";
 
-export default function TechnicalAnalysis() {
+export default function TechnicalAnalysis({
+  serviceModel,
+}: {
+  serviceModel: ServiceModel;
+}) {
   const [isRunningAnalysis, setIsRunningAnalysis] = useState(false);
   const [report, setReport] = useState<{ __html: string } | null>(null);
   const stockCtx = useContext(StockContext);
@@ -10,23 +14,16 @@ export default function TechnicalAnalysis() {
   const runTechnicalAnalysis = useCallback(async () => {
     if (!isRunningAnalysis && stockCtx?.currentStock) {
       setIsRunningAnalysis(true);
-      setReport(null);
       try {
-        const response = await axios.post(
-          "http://localhost:3001/api/run-technical-analysis",
-          stockCtx.currentStock,
-          { headers: { "Content-Type": "application/json" } }
-        );
-        setReport({ __html: response.data.report });
-      } catch (error) {
-        console.error(error);
-        alert(String(error));
+        setReport(null);
+        const report = await serviceModel.generateReport(stockCtx.currentStock);
+        setReport({ __html: report });
       } finally {
         setIsRunningAnalysis(false);
       }
     }
-  }, [isRunningAnalysis, stockCtx]);
-  console.debug(stockCtx?.currentStock);
+  }, [isRunningAnalysis, stockCtx, serviceModel]);
+
   return (
     <div className="pre-container">
       <div className="card">

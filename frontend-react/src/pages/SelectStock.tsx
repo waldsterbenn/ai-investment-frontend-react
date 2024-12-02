@@ -14,17 +14,9 @@ export default function SelectStock({
 
   //Memorize function to avoid recreating on subsequent renders
   const fetchPortfolio = useCallback(async () => {
-    try {
-      const response = await serviceModel.getPortfolio();
-      setItems(response);
-    } catch (error) {
-      console.error(error);
-      if (error instanceof Error) {
-        //Send error up
-        stockCtx?.error(error.message);
-      }
-    }
-  }, [stockCtx, serviceModel]);
+    const response = await serviceModel.getPortfolio();
+    setItems(response);
+  }, [serviceModel]);
 
   // Use useEffect to trigger the API call when component mounts
   useEffect(() => {

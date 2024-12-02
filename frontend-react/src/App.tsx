@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
+import { ServiceModel } from "./model/serviceModel";
 import About from "./pages/About";
 import SelectStock from "./pages/SelectStock";
 import TechnicalAnalysis from "./pages/TechicalAnalysis";
@@ -13,22 +14,33 @@ type ComponentMap = {
   [key: string]: React.ComponentType<any>;
 };
 
-const componentMap: ComponentMap = {
-  Overview,
-  SelectStock,
-  TechnicalAnalysis,
-  FundamentalAnalysis,
-  About,
-};
+const backendUrl = "http://localhost:3001/api/";
 
 function App() {
+  function errorCallback(err: string) {
+    alert(err);
+  }
+  const serviceModel = new ServiceModel({ backendUrl, errorCallback });
   const [currentComponentName, setCurrentComponentName] =
     useState<string>("Overview");
+
+  const componentMap: ComponentMap = {
+    Overview,
+    SelectStock: (props) => <SelectStock serviceModel={props.serviceModel} />,
+    TechnicalAnalysis,
+    FundamentalAnalysis,
+    About,
+  };
 
   const links = useMemo(
     () => [
       { to: "/", text: "Overview", component: "Overview" },
-      { to: "/selectstock", text: "Select Stock", component: "SelectStock" },
+      {
+        to: "/selectstock",
+        text: "Select Stock",
+        component: "SelectStock",
+        props: { serviceModel },
+      },
       {
         to: "/fundamentalanlysis",
         text: "Fundamental Analysis",
@@ -140,7 +152,7 @@ function App() {
           </div>
         </header>
         <div className="wrapper container py-4 px-3 mx-auto">
-          <CurrentComponent />
+          <CurrentComponent serviceModel={serviceModel} />
         </div>
       </div>
     </StockContext.Provider>

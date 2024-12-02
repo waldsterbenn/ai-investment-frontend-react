@@ -1,8 +1,12 @@
-import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
+import { ServiceModel } from "../model/serviceModel";
 import StockContext, { Stock } from "../store/StockContext";
 
-export default function SelectStock() {
+export default function SelectStock({
+  serviceModel,
+}: {
+  serviceModel: ServiceModel;
+}) {
   const [items, setItems] = useState<Stock[]>([]);
 
   // Get ref to global app storage. Set selected value on the ctx to send changes to others
@@ -11,8 +15,8 @@ export default function SelectStock() {
   //Memorize function to avoid recreating on subsequent renders
   const fetchPortfolio = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/portfolio");
-      setItems(response.data.portfolio);
+      const response = await serviceModel.getPortfolio();
+      setItems(response);
     } catch (error) {
       console.error(error);
       if (error instanceof Error) {
@@ -20,7 +24,7 @@ export default function SelectStock() {
         stockCtx?.error(error.message);
       }
     }
-  }, [stockCtx]);
+  }, [stockCtx, serviceModel]);
 
   // Use useEffect to trigger the API call when component mounts
   useEffect(() => {
@@ -41,13 +45,14 @@ export default function SelectStock() {
             </header>
             <div className="card-body">
               <div className="form-check">
-                {items?.map((item, index) => (
-                  <div key={index}>
+                {items?.map((item) => (
+                  <div key={item.name}>
                     <input
                       type="radio"
                       className="form-check-input"
                       name="stockSelection"
                       onChange={() => stockCtx?.setCurrentStock(item)}
+                      checked={stockCtx?.currentStock?.name === item.name}
                     />
                     <label className="form-check-label">
                       {item.name} ({item.ticker_symbol})
